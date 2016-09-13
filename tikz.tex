@@ -19,7 +19,7 @@
 
         %Ground
         \draw (P) ++(-1,0) -- +(8,0);
-        \draw[thick] (P) -- +(\angle:7) node[pos=0.2] (A) {} node[pos=0.7] (B) {};
+        \draw[thick] (P) -- +(\angle:7) coordinate[pos=0.2] (A) coordinate[pos=0.7] (B);
         \draw (A |- P) to[bend right] (A.center);
         \node[below right] at (A) {$\theta$};
         \foreach \x in {-1,-0.8,...,7}{
@@ -32,7 +32,7 @@
 
         %Box
         \draw[blue, very thick, rounded corners, rotate around={\angle:(B)}] (B) rectangle +(\size,\size);
-        \path (B) -- ++(\angle:0.5*\size) node[pos=1] (Y) {} -- +(90+\angle:0.5*\size) node[pos=1] (Z) {};
+        \path (B) -- ++(\angle:0.5*\size) coordinate[pos=1] (Y) -- +(90+\angle:0.5*\size) coordinate[pos=1] (Z);
 
         %Vectors
         \draw[gray, thick, ->] (Z.center) -- +(0,-\force) node[pos=1,left]{$mg$};
